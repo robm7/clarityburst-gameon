@@ -1,0 +1,84 @@
+﻿@import "tailwindcss";
+
+/* === Brand tokens === */
+:root {
+  --primary:#1E90FF;
+  --secondary:#4AD6FF;
+  --background:#0B0B0C;
+  --foreground:#F4F7FE;
+
+  --muted:#C8D1E6;
+  --card:rgba(255,255,255,0.05);
+  --border:rgba(255,255,255,0.15);
+  --primary-foreground:#000000;
+}
+.dark {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* === Page & snap behavior === */
+html, body, #root { height: 100%; }
+body { margin: 0; overflow: hidden; } /* lock page scroll */
+
+/* Each slide must not spill into the next */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  position: relative;
+  overflow: hidden;      /* <-- prevents any overlap/spill */
+}
+.overscroll-contain { overscroll-behavior-y: contain; }
+* { box-sizing: border-box; }
+
+/* === Helpers used by the deck === */
+.snap-y-mandatory { scroll-snap-type: y mandatory; }
+.snap-start { scroll-snap-align: start; }
+.snap-always { scroll-snap-stop: always; }
+.snap-always { scroll-snap-stop: always; }
+.glow-blue {
+  box-shadow: 0 0 20px rgba(30,144,255,.3),
+              0 0 40px rgba(30,144,255,.1);
+}
+.text-glow {
+  text-shadow: 0 0 20px rgba(30,144,255,.5);
+}
+
+/* === Scroll and Snap Behaviors === */
+.inner-scroll {
+  max-height: 100svh;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.no-bounce {
+  overscroll-behavior-y: contain;
+}
+.deck-scroll {
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* === Token → utility mappings === */
+.bg-background { background-color: var(--background); }
+.text-foreground { color: var(--foreground); }
+
+.bg-primary { background-color: var(--primary); }
+.text-primary { color: var(--primary); }
+.text-primary-foreground { color: var(--primary-foreground); }
+
+.text-secondary { color: var(--secondary); }
+.bg-card { background-color: var(--card); }
+.border-border { border-color: var(--border); }
+.text-muted { color: var(--muted); }
+
+/* === Literal slash variants === */
+.bg-muted\/30 {
+  background-color: color-mix(in srgb, var(--muted) 30%, transparent);
+}
+.hover\:bg-primary\/90:hover {
+  background-color: color-mix(in srgb, var(--primary) 90%, transparent);
+}
+.hover\:bg-muted\/50:hover {
+  background-color: color-mix(in srgb, var(--muted) 50%, transparent);
+}
