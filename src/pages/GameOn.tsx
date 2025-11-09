@@ -15,7 +15,7 @@ export default function GameOn() {
 
   const deckRef = useRef<HTMLDivElement>(null);
 
-  const totalSlides = 16;
+  const totalSlides = 17; // Updated to include split "Why Game On" slides
 
   // Parse URL parameters + deep link
   useEffect(() => {
@@ -191,6 +191,7 @@ export default function GameOn() {
 
       {/* Slide 1 */}
       <section id="s1" className="snap-section h-[100svh] flex flex-col items-center justify-center px-6 py-24 relative">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 1/{totalSlides}</div>
         <motion.div {...fadeInUp} className="text-center max-w-5xl mx-auto">
           <h1 className="text-6xl md:text-7xl font-bold mb-6 text-glow">
             ClarityBurst<sup className="text-4xl">™</sup>
@@ -211,8 +212,10 @@ export default function GameOn() {
 
       {/* Slide 2 */}
       <section id="s2" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 2/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Problem — The Prompting Bottleneck</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-primary">Problem — The Prompting Bottleneck</h2>
+          <p className="text-2xl mb-8 text-secondary">85% of AI users can't express what they want from AI clearly enough to get results</p>
           <div className="space-y-8 text-2xl md:text-3xl">
             <p className="leading-relaxed">Most people know what they want from AI — they just can't express it clearly.</p>
             <p className="leading-relaxed">
@@ -227,8 +230,10 @@ export default function GameOn() {
 
       {/* Slide 3 */}
       <section id="s3" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 3/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Solution — The Translation Layer</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-primary">Solution — The Translation Layer</h2>
+          <p className="text-2xl mb-8 text-secondary">ClarityBurst converts everyday language into structured, high-performance prompts</p>
           <div className="space-y-8 text-2xl md:text-3xl">
             <p className="leading-relaxed">ClarityBurst bridges the gap between human intent and machine understanding.</p>
             <p className="leading-relaxed">
@@ -242,8 +247,10 @@ export default function GameOn() {
 
       {/* Slide 4 */}
       <section id="s4" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 4/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Product Snapshot / MVP</h2>
+          <h2 className="text-5xl md:text-6xl font-bold mb-8 text-primary">Product Snapshot / MVP</h2>
+          <p className="text-2xl mb-8 text-secondary">Live web/mobile app with 94% validated formula-selection accuracy</p>
           <div className="space-y-8 text-2xl md:text-3xl">
             <p className="leading-relaxed">ClarityBurst is already live as a working web and mobile PWA.</p>
             <p className="leading-relaxed">
@@ -258,6 +265,7 @@ export default function GameOn() {
 
       {/* Slide 5 */}
       <section id="s5" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 5/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Competitive Edge — Cutting Through the Noise</h2>
           <div className="space-y-8 text-2xl md:text-3xl">
@@ -271,52 +279,49 @@ export default function GameOn() {
         </motion.div>
       </section>
 
-      {/* Slide 6 */}
-      <section id="s6" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+      {/* Slide 6 - Consolidated Macro Narrative */}
+      <AutoFitSlide id="s6" className="bg-neutral-950 text-white" minScale={0.82}>
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 6/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Meta-Pattern of Societal Change</h2>
-          <div className="space-y-8 text-2xl md:text-3xl">
+          <h2 className="text-5xl md:text-6xl font-bold mb-10 text-primary">Market Timing & AI Evolution</h2>
+          <div className="space-y-7 text-2xl md:text-3xl">
             <p className="leading-relaxed">
-              Every societal shift follows the same pattern — <span className="text-secondary font-semibold">Enterprise → Consumer → Society</span>.
+              Every major technology follows the same adoption pattern: <span className="text-secondary font-semibold">Enterprise → Consumer → Society</span>
             </p>
-            <p className="leading-relaxed">Printing Press → Industrial → Internet → Mobile → AI.</p>
-            <p className="leading-relaxed font-semibold text-secondary">The pattern is constant — the timeline is collapsing.</p>
-            <p className="text-xl leading-relaxed text-muted pt-4">
-              Enterprise AI slowdown (Aug 2025) confirms the pattern entering its consumer phase — "AI service adoption fell 44.5% → 43.8%."
-              <span className="text-sm ml-2">(Business Insider, Nov 3 2025)</span>
+            
+            <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+              <p className="font-medium text-blue-300 flex-1">Printing Press → Industrial → Internet → Mobile → <span className="text-white font-semibold">AI</span></p>
+              <p className="text-xl text-blue-200">Timeline compression: decades → years → months</p>
+            </div>
+            
+            <p className="leading-relaxed pt-2">
+              <span className="text-secondary font-semibold">August 2025 marked the inflection point</span>: Enterprise AI adoption plateaued (44.5% → 43.8%) as
+              large-scale systems proved fragile and agent technology too complex for everyday employees.
             </p>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Slide 7 */}
-      <AutoFitSlide id="s7" className="bg-neutral-950 text-white" minScale={0.82}>
-        <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Market Timing — Enterprise Plateau → Consumer Shift</h2>
-          <div className="space-y-8 text-2xl md:text-3xl">
-            <p className="leading-relaxed">Enterprise AI growth slowed for the first time in Aug 2025</p>
-            <p className="text-xl text-muted leading-relaxed">(Business Insider, Nov 3 2025 — "AI service adoption fell 44.5% → 43.8%.")</p>
-            <p className="leading-relaxed">Enterprise adoption is plateauing as large-scale AI systems prove fragile, complex, and difficult to scale across teams.</p>
-            <p className="leading-relaxed">
-              The promised advantage of AI agents — automating roles — remains out of reach, since most are hard to implement and too complex for everyday employees.
+            
+            <p className="leading-relaxed font-semibold text-secondary">
+              This Enterprise Plateau signals the perfect entry timing for ClarityBurst: as the industry shifts from complex systems to human-centered tools,
+              our clarity-first approach addresses the exact pain point blocking adoption.
             </p>
-            <p className="leading-relaxed font-semibold text-secondary pt-4">
-              This slowdown marks the turning point: from enterprise experimentation to usable, human-centered tools.
-              ClarityBurst enters at this inflection, delivering clarity and structure for the next wave of adoption.
+            
+            <p className="leading-relaxed font-semibold text-primary mt-6">
+              The next slide visualizes this critical market timing and enterprise plateau... <span className="text-sm opacity-70">continued →</span>
             </p>
           </div>
         </motion.div>
       </AutoFitSlide>
 
-      {/* Slide 8A - Text only */}
+      {/* Slide 7 - Agent Bottleneck Explanation */}
       <section
-        id="s8"
+        id="s7"
         className="snap-section snap-start snap-always h-[100svh] overflow-hidden bg-neutral-950 text-white"
         role="group"
         aria-roledescription="slide"
-        aria-label={`Slide 8 of ${totalSlides}`}
+        aria-label={`Slide 7 of ${totalSlides}`}
+        aria-description="When AI agents spiked, enterprise adoption stalled"
       >
         <div className="h-full w-full flex flex-col justify-center px-6 md:px-10 max-w-[1100px] mx-auto space-y-6">
+          <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 7/{totalSlides}</div>
           <motion.h2 {...fadeInUp} className="text-balance text-[clamp(28px,4.5vw,56px)] font-extrabold leading-tight text-blue-400">
             Prediction Realized — The Agent Bottleneck
           </motion.h2>
@@ -333,12 +338,50 @@ export default function GameOn() {
             </p>
             <p className="text-[clamp(16px,1.6vw,20px)] font-semibold text-blue-300">
               ClarityBurst identified this inflection early — proving that clarity, not compute, drives real adoption.
+              <br /><span className="font-normal opacity-70 text-sm ml-2">The next slide shows the data behind this trend... <span className="text-xs">continued →</span></span>
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Slide 8B - Chart only */}
+      {/* Slide 8 - Agent Bottleneck Data Visualization */}
+      <section
+        id="s8"
+        className="snap-section snap-start snap-always h-[100svh] overflow-hidden bg-neutral-950 text-white"
+        role="group"
+        aria-roledescription="slide"
+        aria-label={`Slide 8 of ${totalSlides}`}
+        aria-description="Chart showing AI agent hype versus enterprise adoption rates"
+      >
+        <div className="h-full w-full flex flex-col justify-center items-center px-6 md:px-10 py-12">
+          <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 8/{totalSlides}</div>
+          <motion.h2 {...fadeInUp} className="text-[clamp(24px,3.2vw,36px)] font-extrabold leading-tight text-blue-400 mb-3 text-center">
+            AI Agent Hype Peaks While Enterprise Adoption Stalls
+          </motion.h2>
+          
+          <motion.figure {...fadeInUp} className="w-[min(950px,90vw)] flex flex-col items-center justify-center">
+            <div className="max-h-[65vh] flex items-center">
+              <img
+                src="/agent_bottleneck_refined_dark.png"
+                alt="Enterprise AI Slowdown vs. Agent Hype, 2024–2025"
+                className="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10 max-h-full object-contain"
+              />
+            </div>
+            
+            <div className="mt-3 w-full flex flex-col gap-1">
+              <p className="text-center text-[clamp(13px,1.3vw,16px)] leading-tight text-blue-300 font-medium">
+                The divergence between AI agent launches and enterprise adoption highlights the integration gap ClarityBurst solves.
+              </p>
+              
+              <p className="text-center text-xs text-muted">
+                Sources: Business Insider, TechCrunch, Fortune, Gartner, The Register, Medium (2024-2025)
+              </p>
+            </div>
+          </motion.figure>
+        </div>
+      </section>
+
+      {/* Slide 9 - Compression Effect Explanation */}
       <section
         id="s9"
         className="snap-section snap-start snap-always h-[100svh] overflow-hidden bg-neutral-950 text-white"
@@ -346,33 +389,8 @@ export default function GameOn() {
         aria-roledescription="slide"
         aria-label={`Slide 9 of ${totalSlides}`}
       >
-        <div className="h-full w-full flex items-center justify-center px-6 md:px-10">
-          <motion.figure {...fadeInUp} className="w-[min(1000px,92vw)]">
-            <img
-              src="/agent_bottleneck_refined_dark.png"
-              alt="Enterprise AI Slowdown vs. Agent Hype, 2024–2025"
-              className="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
-            />
-            <figcaption className="text-center text-sm text-muted mt-4">
-              Chart: Enterprise AI Slowdown vs. Agent Hype, 2024–2025<br />
-              Sources: Business Insider, TechCrunch, Fortune, Gartner, The Register, Medium
-            </figcaption>
-            <figcaption className="sr-only">
-              Chart showing agent hype rising while enterprise adoption plateaus, illustrating the Agent Bottleneck.
-            </figcaption>
-          </motion.figure>
-        </div>
-      </section>
-
-      {/* Slide 10A - Text only (previously slide 9A) */}
-      <section
-        id="s10"
-        className="snap-section snap-start snap-always h-[100svh] overflow-hidden bg-neutral-950 text-white"
-        role="group"
-        aria-roledescription="slide"
-        aria-label={`Slide 10 of ${totalSlides}`}
-      >
         <div className="h-full w-full flex flex-col justify-center px-6 md:px-10 max-w-[1100px] mx-auto space-y-6">
+          <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 9/{totalSlides}</div>
           <motion.h2 {...fadeInUp} className="text-balance text-[clamp(28px,4.5vw,56px)] font-extrabold leading-tight text-blue-400">
             Compression Effect — Why Now
           </motion.h2>
@@ -388,39 +406,51 @@ export default function GameOn() {
             </p>
             <p className="text-[clamp(16px,1.6vw,20px)] font-semibold text-blue-300">
               ClarityBurst stands at the center of that acceleration — the Interface Catalyst.
+              <br /><span className="font-normal opacity-70 text-sm ml-2">The visualization on the next slide illustrates this compression effect... <span className="text-xs">continued →</span></span>
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Slide 11B - Chart only (previously slide 9B) */}
+      {/* Slide 10 - Compression Effect Data Visualization */}
       <section
-        id="s11"
+        id="s10"
         className="snap-section snap-start snap-always h-[100svh] overflow-hidden bg-neutral-950 text-white"
         role="group"
         aria-roledescription="slide"
-        aria-label={`Slide 11 of ${totalSlides}`}
+        aria-label={`Slide 10 of ${totalSlides}`}
       >
-        <div className="h-full w-full flex items-center justify-center px-6 md:px-10">
-          <motion.figure {...fadeInUp} className="w-[min(1000px,92vw)]">
-            <img
-              src="/compression_effect_chart.png"
-              alt="Accelerating Adoption Cycles Across Technology Waves (1990-2025)"
-              className="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10"
-            />
-            <figcaption className="text-center text-sm text-muted mt-4">
-              Chart: Accelerating Adoption Cycles Across Technology Waves (1990–2025)<br />
-              Sources: Pew (2018), DataTrek (2016), RightScale (2017), Reuters (2023), Bond (2023), Dr Li Blog (2025)
-            </figcaption>
-            <figcaption className="sr-only">
-              Chart illustrating shortening time-to-mass-adoption from desktop → mobile → SaaS → AI interfaces.
-            </figcaption>
+        <div className="h-full w-full flex flex-col justify-center items-center px-6 md:px-10 py-12">
+          <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 10/{totalSlides}</div>
+          <motion.h2 {...fadeInUp} className="text-[clamp(24px,3.2vw,36px)] font-extrabold leading-tight text-blue-400 mb-3 text-center">
+            Technology Adoption Cycles Are Dramatically Compressing
+          </motion.h2>
+          
+          <motion.figure {...fadeInUp} className="w-[min(950px,90vw)] flex flex-col items-center justify-center">
+            <div className="max-h-[65vh] flex items-center">
+              <img
+                src="/compression_effect_chart.png"
+                alt="Accelerating Adoption Cycles Across Technology Waves (1990-2025)"
+                className="w-full h-auto rounded-xl shadow-2xl ring-1 ring-white/10 max-h-full object-contain"
+              />
+            </div>
+            
+            <div className="mt-3 w-full flex flex-col gap-1">
+              <p className="text-center text-[clamp(13px,1.3vw,16px)] leading-tight text-blue-300 font-medium">
+                Companies that provide immediate clarity like ClarityBurst capture market share as adoption windows shrink.
+              </p>
+              
+              <p className="text-center text-xs text-muted">
+                Sources: Pew, DataTrek, RightScale, Reuters, Bond, Dr Li Blog (1990-2025)
+              </p>
+            </div>
           </motion.figure>
         </div>
       </section>
 
-      {/* Slide 12 (previously slide 10, now slide 12) */}
-      <section id="s12" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+      {/* Slide 11 - IP & Defensibility */}
+      <section id="s11" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 11/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">IP & Defensibility</h2>
           <p className="text-3xl mb-12 text-secondary font-semibold">Our foundation is protected.</p>
@@ -437,8 +467,9 @@ export default function GameOn() {
         </motion.div>
       </section>
 
-      {/* Slide 14 */}
-      <section id="s14" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+      {/* Slide 12 - Founder Story */}
+      <section id="s12" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 12/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Founder Story — Grit in Action</h2>
           <div className="space-y-8 text-2xl md:text-3xl">
@@ -451,8 +482,9 @@ export default function GameOn() {
         </motion.div>
       </section>
 
-      {/* Slide 13 */}
+      {/* Slide 13 - Incorporation & Formalization */}
       <section id="s13" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 13/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Incorporation & Formalization</h2>
           <div className="space-y-8 text-2xl md:text-3xl">
@@ -465,8 +497,9 @@ export default function GameOn() {
         </motion.div>
       </section>
 
-      {/* Slide 15 */}
-      <section id="s15" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+      {/* Slide 14 - Expansion & Acceleration */}
+      <section id="s14" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 14/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary">Expansion & Acceleration</h2>
           <div className="space-y-8 text-2xl md:text-3xl">
@@ -481,8 +514,81 @@ export default function GameOn() {
         </motion.div>
       </section>
 
-      {/* Slide 16 */}
+      {/* Slide 15 - Why Game On (Part 1) */}
+      <section id="s15" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 15/{totalSlides}</div>
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-primary">Why Game On</h2>
+          <p className="text-2xl mb-8 text-secondary">A perfect match for Canadian innovation acceleration</p>
+          <div className="space-y-6 text-xl md:text-2xl">
+            <p className="leading-relaxed text-xl md:text-2xl">
+              As a <span className="text-secondary font-semibold">Canadian founder incorporating in British Columbia</span>,
+              ClarityBurst is perfectly positioned for Game On's mission to elevate Canadian innovation.
+            </p>
+            <p className="leading-relaxed text-xl md:text-2xl">
+              Our <span className="text-secondary font-semibold">early-stage position with billion-dollar ambition</span> aligns with
+              Game On's focus on high-potential ventures ready to accelerate.
+            </p>
+            <p className="text-center mt-12 text-base text-primary/70">
+              Continue to next slide for what we seek from Game On →
+            </p>
+          </div>
+        </motion.div>
+      </section>
+      
+      {/* Slide 16 - What We Seek from Game On (Part 2) */}
       <section id="s16" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 16/{totalSlides}</div>
+        <motion.div {...fadeInUp} className="max-w-4xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-primary">What We Seek from Game On</h2>
+          <p className="text-xl mb-8 text-secondary">Key outcomes for ClarityBurst through the accelerator program</p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+            <div className="space-y-5">
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/20 p-2 mt-1">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-lg md:text-xl">Focused mentorship from experienced SaaS operators</p>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/20 p-2 mt-1">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-lg md:text-xl">Refinement of our go-to-market strategy</p>
+              </div>
+            </div>
+            
+            <div className="space-y-5">
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/20 p-2 mt-1">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-lg md:text-xl">Validation of pricing and distribution models</p>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/20 p-2 mt-1">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-lg md:text-xl">Acceleration of early revenue opportunities</p>
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <div className="rounded-full bg-primary/20 p-2 mt-1">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                </div>
+                <p className="text-lg md:text-xl">Connection to the broader Canadian tech ecosystem</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+      
+      {/* Slide 17 - Call to Action */}
+      <section id="s17" className="snap-section h-[100svh] flex items-center justify-center px-6 py-24">
+        <div className="absolute bottom-4 right-4 text-xs font-medium text-primary/70 bg-black/30 px-2 py-1 rounded z-50">Slide 17/{totalSlides}</div>
         <motion.div {...fadeInUp} className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-12 text-primary text-glow">The Time Is Now</h2>
           <p className="text-4xl md:text-5xl font-bold mb-12 text-secondary">The Interface Era Has Begun.</p>
@@ -491,10 +597,13 @@ export default function GameOn() {
           </blockquote>
           <div className="space-y-8 text-2xl md:text-3xl">
             <p className="leading-relaxed">ClarityBurst is ready to guide that shift — transforming how people and AI communicate.</p>
-            <p className="leading-relaxed font-semibold text-secondary">We've built the foundation; now it's time to scale it with the right partners.</p>
+            <p className="leading-relaxed font-semibold text-secondary">
+              Committed to Game On's program dates and eager to leverage the mentorship, we're ready to scale with the right partners.
+            </p>
             <div className="space-y-4 text-xl pt-8">
               <p className="text-primary font-semibold">r.monahan@clarityburst.io</p>
               <p className="text-secondary font-semibold">clarityburst.io</p>
+              <p className="text-lg text-muted mt-4">Slide <span id="slide-number" className="text-primary font-medium">17/17</span></p>
             </div>
           </div>
         </motion.div>
