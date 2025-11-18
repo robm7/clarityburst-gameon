@@ -82,3 +82,9 @@ body { margin: 0; overflow: hidden; } /* lock page scroll */
 .hover\:bg-muted\/50:hover {
   background-color: color-mix(in srgb, var(--muted) 50%, transparent);
 }
+
+/* === Responsive utilities === */
+@media (min-width: 475px) {
+  .xs\:inline { display: inline; }
+  .xs\:hidden { display: none; }
+}
